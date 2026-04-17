@@ -1,0 +1,39 @@
+name: Generate Daily Briefing
+
+on:
+  schedule:
+    # 6:00 AM PST = 14:00 UTC
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate briefing
+        env:
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+        run: python src/generate_briefing.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "Daily Briefing Bot"
+          git config user.email "bot@github.local"
+          git add docs/index.html
+          git commit -m "chore: auto-generate daily briefing" --allow-empty
+          git push
