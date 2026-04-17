@@ -129,9 +129,14 @@ def _parse_news_item(item: dict) -> dict:
             pub = dt.strftime("%b %d")
         except Exception:
             pub = pub[:10]
+    publisher = item.get("publisher") or {}
+    if isinstance(publisher, dict):
+        source = publisher.get("title", "Unknown")
+    else:
+        source = str(publisher).strip() or "Unknown"
     return {
         "title": title,
-        "source": (item.get("publisher") or {}).get("title", "Unknown"),
+        "source": source,
         "url": item.get("url") or "#",
         "date": pub,
     }
