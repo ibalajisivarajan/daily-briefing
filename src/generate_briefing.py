@@ -334,6 +334,8 @@ def build_context() -> dict:
 
     langley_weather = fetch_weather(LANGLEY)
     ferndale_weather = fetch_weather(FERNDALE)
+    langley_weather["city"] = "Langley, BC"
+    ferndale_weather["city"] = "Ferndale, WA"
 
     wallpaper = fetch_wallpaper()
     news = fetch_all_news()
@@ -349,10 +351,12 @@ def build_context() -> dict:
             "ferndale": ferndale_weather,
         },
         "wallpaper": wallpaper,
+        "background_image_url": wallpaper.get("url", ""),
         "news": news,
         "traffic": traffic,
         "quote": quote,
         "generated_at": generated_at,
+        "github_token": os.environ.get("GITHUB_TOKEN", ""),
     }
 
 

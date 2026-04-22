@@ -1,9 +1,6 @@
 name: Generate Daily Briefing
 
 on:
-  schedule:
-    # 6:00 AM PST = 14:00 UTC
-    - cron: '0 14 * * *'
   workflow_dispatch:
 
 jobs:
@@ -28,6 +25,7 @@ jobs:
         env:
           OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          GITHUB_TOKEN: ${{ secrets.BRIEFING_REFRESH_TOKEN }}
         run: python src/generate_briefing.py
 
       - name: Commit and push
