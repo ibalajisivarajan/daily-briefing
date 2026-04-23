@@ -1,21 +1,21 @@
 {
   "date": "Wednesday, April 22, 2026",
-  "time": "06:00",
-  "greeting": "Good morning, Bala.",
-  "quote": "Execution without prioritization is just being busy.",
-  "background_image_url": "https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w5Mjc4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY4ODYxODN8&ixlib=rb-4.1.0&q=85",
+  "time": "21:29",
+  "greeting": "Good afternoon, Bala.",
+  "quote": "If you can't explain the timeline, you don't understand the project.",
+  "background_image_url": "https://images.unsplash.com/photo-1462651567147-aa679fd1cfaf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w5Mjc4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY5MTg1NzB8&ixlib=rb-4.1.0&q=85",
   "weather": {
     "langley": {
       "city": "Langley, BC",
-      "icon": "",
       "temp": 12,
-      "condition": "Overcast Clouds"
+      "condition": "Overcast Clouds",
+      "icon": "☁️"
     },
     "ferndale": {
       "city": "Ferndale, WA",
-      "icon": "",
       "temp": 12,
-      "condition": "Overcast Clouds"
+      "condition": "Clear Sky",
+      "icon": "☀️"
     }
   },
   "news": {
@@ -33,23 +33,17 @@
         "date": "Apr 20"
       },
       {
-        "title": "What leaders are saying about the renewed geopolitics of energy - The World Economic Forum",
-        "source": "The World Economic Forum",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPbFNvb0IwbXYxVDFTYzdxVTVkcUZ2ZTJvOGJWSUU5QVM2VC1pQXZ1NHVFWmgxeWFMdC13N2F0eF9UOW9kbnpWclpONXBXd3JFQTZuWmJGbGhOYkJZSnhZTVdYcnRBMndGT0RaSXpRQjJ5SGRaTXdGV3VySWlicW92UlQ4UDNnSHVONTFoUERpUQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "date": "Apr 02"
+        "title": "Social justice in the new world order - Meer | English edition",
+        "source": "Meer | English edition",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE14akFCUnV6RGktSGRfY3lld0pxal95aTYxeG5EaXNyOGtrMTlrd0VvT0FiZmtuNVVRMXZ6RUl5YjR6cUw5VGgzR1RDNWsyTHZSaG9jRWlKb2Q5TVBNLXZBQ2hRZTRuaFgtdTU3cGxYRmFDbkZuN1BZ?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "date": "Apr 22"
       }
     ],
     "technology": [
       {
-        "title": "What is Mythos AI and why could it be a threat to global cybersecurity? - The Guardian",
-        "source": "The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNREVUcTM3eG02Mk03WklUWHlKWmkxQ0hUYnRHSVRiM1ZqRHRiTDJSZ1RPaUdSd0lfZzFCc0p2eGhFLXVIRkhKSkdkcVVoTkx6QnVXVE9iUmpFRUtvWTRhQ0NBZmRPekotSkY5ZElnYnVPSmNLaGI1c2RpZ3pDSV9kRXJBUkFManpKVDdUNzhrZlZkUXVfUk9raFN1TXZTZlQ1d253TndOdzlpZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "date": "Apr 22"
-      },
-      {
-        "title": "Why Marvell Technology (MRVL) Is Up 13.1% After Reported Google AI Chip Talks And What's Next - Yaho",
-        "source": "Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeU5DTk4yaXRVQ0JUaGRsUEs1MnhsZWxWam5qVmdLX3VYVFdqbnpOYmlvYU9DeEVQZnNfX0VnX3pUa1ZHOU5OY1NidVVpcHJScFpBSmRJZWdtM2xjNVBKdlk5YnpfN1pKaWhLcnlqVEQtTkF2U01vRnBTdmNtVmEyYms5RWtfcGVkelZZT2w3dm91T0NBX3dJc0hrOA?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "Aging in Place: How Technology Might Help You Grow Old at Home - The New York Times",
+        "source": "The New York Times",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE11NkVxbm5TdnJTU3ljdzg2LVJKX3VuaDNwUHlkNG5ZWEt6M2s0eTB2OWhyRUoxRjBIb1pxOWRhaXRtWFpsRHZDbjZLcUx0bG9TS3JvaWcwYllYV3RGR2lLM1JXbUJHTm1XTWFfdW8zR1BzYzVJMzVqeFc0QQ?oc=5&hl=en-US&gl=US&ceid=US:en",
         "date": "Apr 22"
       },
       {
@@ -57,40 +51,46 @@
         "source": "MIT Technology Review",
         "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOc1VtUkYyWDM1bm5COTRWa1Q5UHltSEZ0eTV3cjc3TDJ0d2s3OVMxQkxIRkxJMS05S01kQWlURUJJVHR1dTFGXzB1V0JLZ2loQ0YxYWk1S0trdUNidEhCQWo3ZTRFZzVLWHJ6VFhhWjgyMU1HMEZ4d0VBblFjWVZRWENtdlV0MHc5Unp6YVpHbnDSAZYBQVVfeXFMT3VhYkVua2ZqNEJGSlJjSmZVS2tqUnl6OXJNRHE3ckx0Z1ZNcEtLMmNtbnB4Z2x4d2JWc3o1dk1uWEt6TFJHUFhTbWtBZ05xVTJNNDNUNVdXa01pR1ZQaEJPdi0zRWRBV0dxZGdkN0ZNOUo5UVdLQ0gwakxSZElYdFc5eTZqa1dRdHVnSF8tOVY2OXVLTWZ3?oc=5&hl=en-US&gl=US&ceid=US:en",
         "date": "Apr 20"
+      },
+      {
+        "title": "Your bad habits are destroying your charging cables - BBC",
+        "source": "BBC",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNc3doS1NpNlRERER4OFlMZnJUN2tIcWFKZnVjNFpfdjV1a0dqQnlLYXZNR1RuazRXVEVmUjVVU3phbFBqRy1sYUt0dWpicnNYUXFKTkk4azVHMlFCbFpWZjBqMUhUY1RzNFlfam5YdWRRUWY0QkNKbDhLdlBTbDhMZEdPeERsVnM4UW1pNU03OXgzbVJpeXVSTDl0TQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "date": "Apr 22"
       }
     ],
     "finance": [
       {
-        "title": "Earnings call transcript: BPI Q1 2026 misses forecasts amid economic challenges - Investing.com Cana",
-        "source": "Investing.com Canada",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOMTdGTHVMcmVwNk4xb0FrbERlUHVSUFVaZUxzYVdTOHlBaVVHNENab29JYXJRNnBORGFQUE1rSzVpeEx6Wk4zMHFtSkJtcWFjVHV4RFk1MV9aZE1STFRSSUhiT1ZrZUpWYzNyYW9ZWFI0MDgxRkg4SFlkaVB5SmlEOG5FQ1BJUTFaUm5RTHdDMmJnRmdSN2hub2JaODNLRk5NbzhyVlo5aHc1TDBraC05RmxONmVONTd3T1A1ZUMzdUEtMGpzMzJ3OHBodWVPT196YnhUa3lR?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "date": "Apr 22"
+        "title": "The Weekly Bottom Line - TD Economics",
+        "source": "TD Economics",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iS3JheUxIbE9wdXkzWk1rUkxjT1p6VTJWeW1uMVpPY1hKYTMtNFF2Qzh1ck5JNTNKVGRSWXlBOWFta2xtZ2tVUTVhT0FlUmpqX1M2UngxLXRZZw?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "date": "Apr 17"
       },
       {
-        "title": "OpenAI gets set to go public: can we entrust the financial markets with ChatGPT and AI? - The Conver",
-        "source": "The Conversation",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbWpsUW5EZzdWbGJodlJ2YnJfMktwekdVd2NuNkZCcUU0WDhTMzFEODZUc3J1ZHNtalV6MkV2SzN2Yl9vSkdjUEpyeDJzbE5SXzM4cWQ5RWRTSEVhcXdWY3ZjSTZPcENuS0RCLTJrVzFGYV85TDI5QmFCZGNCc3NqOF81VnRCREVzWi1sOVdIMFBlMkhWQUREc3ZlX0Q0Y2U0bVdsM1gtaWhkTVZxS095cU01ZFc5OXhTLTZYaA?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "date": "Apr 21"
+        "title": "New Zealand’s economic recovery delayed but not derailed, finance minister says By Reuters - Investi",
+        "source": "Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOWVUtMDFzWEd3VkFvZHBHZFcwcG54ZDcybW9UVHB6YmVOR3A3Y29oRE0wZTdGb2I4a1dIT0Z3ald2YkZCcjQ2SGJBVGxTanhZVjV2MXRZZ2JKWW0xNGFWQXVKSkg5VG96SzdodkY3bTdvNTRiQ212RTRXbUNYdG5hLUhBdUJKbDJVckFtRmRySlg4TnJwbDhCTVBtZE9CZnc4elhacXhDMFlNZlZFTEpsZGxrZUZvNG1obXVWb2lTNWdETEo3dFp3SnJmbDNyZ0U?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "date": "Apr 23"
       },
       {
-        "title": "Financial Markets Morning Commentary - stonex.com",
-        "source": "stonex.com",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORnVwSEdKUE1XdXhzRlRWci10TTFjclBSdzdsR3pqYnhTa3VUZ1JsNll3NTZDZDZ1TEVydnp3MFFWdk00UEZuYzRPdG1PMXhsa2NJRTVNbGZtdkJFWkxRUm85NUMxS1RNLW00cnNfZVhKSTZxYkdYdEh4NlFDcTdnN1pzeGlCeG5QY2NidFlpcw?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "date": "Apr 22"
+        "title": "Is a Market Correction Coming? - U.S. Bank",
+        "source": "U.S. Bank",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUVliSlNNN1JvaWszYmh4VVhGc3FBczJyOTYtbkVYdmJuc3JoUjROWGdEcjdfdnBybXlteWc1bFRCeEZDTHRxN0xHUnU4Wkg1THdnV3BWUHRKYVhVbGF4QnlwTzZjYU81SkQ2U3VXSElCNXpHQzF4bjFQTXotc3FvSnc4TGxKNlROU3c2SE1PTHM4cmNjanN6X04ydV9kZU5UQ3p1LQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "date": "Apr 16"
       }
     ],
     "local": [
-      {
-        "title": "Fraser Valley Highway 1 Corridor Improvement Program Traffic Notifications - B.C. government",
-        "source": "B.C. government",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZy15MUpLR0t2SnBJRG5zbnFKQk9OM0xja0RfTnBxNm1sREV2cHNOMlRzdEluc1JTdzNOa25sbHBZSUUtcXpsQnZFeXRGeWdEVjdNVEo2bkZQdDRhdDRlaGhqUWVCSFo5emlwWU10LS1QY2FUYWZNajIxdkFKclFoWGFTazZtVGhiOEZhMFUybXhHRDZUcU1ZWjgxRzlwdw?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "date": "Apr 17"
-      },
       {
         "title": "Crews tackle two collisions at Langley Bypass, 2 taken to hospital - Fraser Valley Today",
         "source": "Fraser Valley Today",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTDlLUTVtMkZOODMxV3F2NUhzU2RzcmRaRldBLURiRnhtVVlmeHNrR0paT1A4M2Z4M05RVzR6eFhLRnNQckVYbWZSWUQwbGw4NlN3c1V1dy1zUHFwakl5eUFRS0JrV0l3MEZnVmVlbmlCOVRDa09PbjRLdEdjTnlDX2ZkaDlBeGZ0Rk5uVWcwZ1c5bEEtR1c0YlhteUFkTDRFbnJQRWh1OEExdw?oc=5&hl=en-US&gl=US&ceid=US:en",
         "date": "Apr 18"
+      },
+      {
+        "title": "Fraser Valley Highway 1 Corridor Improvement Program Traffic Notifications - BC government",
+        "source": "BC government",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZy15MUpLR0t2SnBJRG5zbnFKQk9OM0xja0RfTnBxNm1sREV2cHNOMlRzdEluc1JTdzNOa25sbHBZSUUtcXpsQnZFeXRGeWdEVjdNVEo2bkZQdDRhdDRlaGhqUWVCSFo5emlwWU10LS1QY2FUYWZNajIxdkFKclFoWGFTazZtVGhiOEZhMFUybXhHRDZUcU1ZWjgxRzlwdw?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "date": "Apr 17"
       },
       {
         "title": "Rainfall to continue as Fraser Valley in ‘dynamic’ potential flooding situation - Langley Advance Ti",
@@ -101,10 +101,10 @@
     ],
     "jobs": [
       {
-        "title": "Unemployed Ex-Microsoft Worker Struggles to Find Job, Pay Rent - Business Insider",
-        "source": "Business Insider",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaFEtZWR3NS1ZTXl4Y1FBMUpYVjhmYUZVNlluV0VucVpUSjh1V2RLdlZpYUhhOFQ5aXlHaDJVRHJ2WW5ObXAta3I0ck5CVlhtMTlHMmZRRW9fQ1JyOVFrWFRveFlwYkowd2RKWlo3WWNyck8tb3gwd1RKZFA0anZZZjcyZi1KRkRQUjg5eUh6eXpUdzJUbXdqY1paUEZDWjQ?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "date": "Oct 12"
+        "title": "Oracle Layoffs Hit Sales, Engineering, Security: 5 Things To Know - crn.com",
+        "source": "crn.com",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZGR4QngzQ3FhUkR2OEFJT3k1cnVKd3JsUkFWbEc3cVAtOWhGc3dKMGQyOGQ1NVhCV0tMTU8zOUJVRWJiYkxDTHZOY0FNMVFsOGQ0bkoybDNHNEFJc2ZkUG1OMndJZFdKR2ZTMWJqQjhMbVZyTXVsbGdDS3VpTmJSZGdOam1jRVdDMmplTVVYajNzbTluNlBFckRxYw?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "date": "Apr 01"
       },
       {
         "title": "Tech giant Oracle makes 'significant' job cuts - BBC",
@@ -113,18 +113,44 @@
         "date": "Apr 01"
       },
       {
-        "title": "Oracle Layoffs Hit Sales, Engineering, Security: 5 Things To Know - crn.com",
-        "source": "crn.com",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZGR4QngzQ3FhUkR2OEFJT3k1cnVKd3JsUkFWbEc3cVAtOWhGc3dKMGQyOGQ1NVhCV0tMTU8zOUJVRWJiYkxDTHZOY0FNMVFsOGQ0bkoybDNHNEFJc2ZkUG1OMndJZFdKR2ZTMWJqQjhMbVZyTXVsbGdDS3VpTmJSZGdOam1jRVdDMmplTVVYajNzbTluNlBFckRxYw?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "date": "Apr 01"
+        "title": "US tech firm Oracle cuts thousands of jobs as it steps up AI spending - The Guardian",
+        "source": "The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPM183bW81ZXRRclBnYmFfLXpjVGtGT1g5RWZDMFBzdUJmbUljSXJkVGVtYUtjeW9HRHVVVWtqZUt4MEVUUWdORVk1ZkNjREpXVUxUaGpRUnQwNzEwRmhWc3lVTDZBVW9uY1hVdnZGZUYyT3UzMy1lS0E0bVdaeTdSMlNlWFpKNWpGZ3pYZ1IxcWR3eEFaWXo4akhCQXExZU1QajVmMUJoRmYybVJNSFl6WGVQblJ2WVlhRGY3MVVoM0h2eU1NZGJTdHBzWTBGUUU?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "date": "Apr 02"
       }
     ]
   },
   "traffic": {
-    "show_banner": false,
-    "incidents": [],
-    "google_maps_url": ""
+    "show_banner": true,
+    "incidents": [
+      {
+        "type": "Construction",
+        "location": "Beach Road, westbound. Utility work between Highway 99 and S",
+        "updated": ""
+      },
+      {
+        "type": "Incident",
+        "location": "Highway 9, in both directions. Vehicle incident at Agassiz-R",
+        "updated": ""
+      },
+      {
+        "type": "Construction",
+        "location": "Highway 1 (TransCanada Highway), eastbound. Road sweeping be",
+        "updated": ""
+      },
+      {
+        "type": "Construction",
+        "location": "Highway 99, southbound. Utility work between Exit 26 and Exi",
+        "updated": ""
+      },
+      {
+        "type": "Construction",
+        "location": "Highway 15 (Pacific Highway), in both directions. Constructi",
+        "updated": ""
+      }
+    ],
+    "google_maps_url": "https://www.google.com/maps/dir/Langley,+BC/Ferndale,+WA/@49.0,+-122.6,10z"
   },
-  "github_token": "",
-  "generated_at": "2026-04-22 06:00 PDT"
+  "github_token": "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",
+  "generated_at": "2026-04-22 21:29 PDT"
 }
