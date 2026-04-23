@@ -21,17 +21,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Generate briefing
+      - name: Generate briefing data
         env:
           OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
           GITHUB_TOKEN: ${{ secrets.BRIEFING_REFRESH_TOKEN }}
         run: python src/generate_briefing.py
 
-      - name: Commit and push
+      - name: Commit and push data.json
         run: |
           git config user.name "Daily Briefing Bot"
           git config user.email "bot@github.local"
-          git add docs/index.html
-          git commit -m "chore: auto-generate daily briefing" --allow-empty
+          git add docs/data.json
+          git commit -m "chore: refresh briefing data" --allow-empty
           git push

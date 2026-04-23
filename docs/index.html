@@ -9,11 +9,9 @@
 html, body { width: 100%; height: 100vh; height: 100dvh; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; }
 
 .bg {
-  
-  background-image: url('https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w5Mjc4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY4ODYxODN8&ixlib=rb-4.1.0&q=85');
-  
   background-size: cover;
   background-position: center;
+  background-color: #1a1a2e;
   width: 100%;
   height: 100vh;
   height: 100dvh;
@@ -39,7 +37,7 @@ html, body { width: 100%; height: 100vh; height: 100dvh; overflow: hidden; font-
 
 /* ── Top bar ── */
 .topbar { display: flex; justify-content: space-between; align-items: flex-start; }
-.date { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.8; font-weight: 400; padding-top: 4px; }
+.date { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.8; padding-top: 4px; }
 .weather-group { display: flex; gap: 40px; }
 .weather-item { text-align: right; }
 .weather-city { font-size: 13px; opacity: 0.7; margin-bottom: 4px; }
@@ -128,11 +126,15 @@ html, body { width: 100%; height: 100vh; height: 100dvh; overflow: hidden; font-
 }
 .modal-close:hover { background: rgba(255,255,255,0.25); }
 .modal-title { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; margin-bottom: 32px; }
-.modal-item { padding: 20px 0; border-bottom: 0.5px solid rgba(255,255,255,0.1); transition: padding-left 0.2s; }
+.modal-item { padding: 20px 0; border-bottom: 0.5px solid rgba(255,255,255,0.1); }
 .modal-item:last-child { border: none; padding-bottom: 0; }
 .modal-item a { display: block; font-size: 16px; line-height: 1.5; margin-bottom: 8px; color: white; text-decoration: none; }
 .modal-item a:hover { opacity: 0.8; }
 .modal-item-source { font-size: 12px; opacity: 0.5; }
+
+/* ── Loading state ── */
+.loading-pulse { animation: pulse 1.5s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 0.9; } }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -158,218 +160,203 @@ html, body { width: 100%; height: 100vh; height: 100dvh; overflow: hidden; font-
 </head>
 <body>
 
-<div class="bg">
+<div class="bg" id="bg">
   <div class="overlay"></div>
 
   <div class="content">
-    <!-- Top bar -->
     <div class="topbar">
-      <div class="date">Wednesday, April 22, 2026</div>
+      <div class="date loading-pulse" id="date">Loading…</div>
       <div class="weather-group">
         <div class="weather-item">
-          <div class="weather-city">Langley, BC</div>
-          <div class="weather-temp"> 12°</div>
-          <div class="weather-condition">Overcast Clouds</div>
+          <div class="weather-city" id="langley-city">Langley, BC</div>
+          <div class="weather-temp loading-pulse" id="langley-temp">—</div>
+          <div class="weather-condition" id="langley-condition"></div>
         </div>
         <div class="weather-item">
-          <div class="weather-city">Ferndale, WA</div>
-          <div class="weather-temp"> 12°</div>
-          <div class="weather-condition">Overcast Clouds</div>
+          <div class="weather-city" id="ferndale-city">Ferndale, WA</div>
+          <div class="weather-temp loading-pulse" id="ferndale-temp">—</div>
+          <div class="weather-condition" id="ferndale-condition"></div>
         </div>
       </div>
     </div>
 
-    <!-- Hero -->
     <div class="hero">
-      <div class="time">12:29</div>
-      <div class="greeting">Good afternoon, Bala.</div>
-      <div class="quote">"A program manager&amp;#39;s job is to make the complex feel simple."</div>
+      <div class="time loading-pulse" id="time">--:--</div>
+      <div class="greeting loading-pulse" id="greeting">Good morning, Bala.</div>
+      <div class="quote" id="quote"></div>
     </div>
 
-    <!-- Tabs -->
     <div class="tabs">
-      <div class="tab" onclick="openModal('geopolitics')">🌍 Geopolitics <span class="tab-count">3</span></div>
-      <div class="tab" onclick="openModal('technology')">⚙️ Tech <span class="tab-count">3</span></div>
-      <div class="tab" onclick="openModal('finance')">💰 Finance <span class="tab-count">3</span></div>
-      <div class="tab" onclick="openModal('local')">📍 Local <span class="tab-count">3</span></div>
-      <div class="tab" onclick="openModal('jobs')">💼 Jobs <span class="tab-count">3</span></div>
+      <div class="tab" onclick="openModal('geopolitics')">🌍 Geopolitics <span class="tab-count" id="count-geopolitics">—</span></div>
+      <div class="tab" onclick="openModal('technology')">⚙️ Tech <span class="tab-count" id="count-technology">—</span></div>
+      <div class="tab" onclick="openModal('finance')">💰 Finance <span class="tab-count" id="count-finance">—</span></div>
+      <div class="tab" onclick="openModal('local')">📍 Local <span class="tab-count" id="count-local">—</span></div>
+      <div class="tab" onclick="openModal('jobs')">💼 Jobs <span class="tab-count" id="count-jobs">—</span></div>
     </div>
   </div>
 
-  <!-- Refresh button -->
   <button class="refresh-btn" id="refreshBtn" onclick="refreshBriefing()">🔄 Refresh</button>
 
-  <!-- Modals -->
-  
-  
   <div class="modal" id="modal-geopolitics">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <div class="modal-title">🌍 Geopolitics</div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxPWGhybEFzNDM1T3k2REkxeVNlYzJxcnprSGZ1dnN0YzV1U3A1TlBEdWx2Z2xvY29BRjVUUkdDTTVwU3JnTzNRZkVORVRDcDF5dlo1TVZpMUUxekdBUHdaSDdqY0N2d0p6elFZbzRLS3R2V080cXBNMENrckJfOFkzNWxqRy15T0pnVlRhbkd2ZDBCWEl4UWptR0cxYkJzYW8?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Geopolitics Weekly (Iran War, Ceasefire Prospects, US Stockpiles) - Geopolitical Monitor</a>
-        <div class="modal-item-source">Geopolitical Monitor · Apr 20</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTjl0X2VybVEzOGdGdXFJMzlpZ2dKNnV2cVBSZ2ZRQVVIakZEX0J6Rml5VHFBQ0JHT0FhaEZ3eFM0RW1qOG5rMWhBOGlkS1p1eTVIdVpicndBWmFER1V5WjZ2M3h0aUs5UkZjUlItQjRVRzhIVGVMRERjNGl5YU1kQ0ZiVjhndmc2?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Geopolitics and climate cooperation for a world in flux - E3G</a>
-        <div class="modal-item-source">E3G · Apr 20</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPbFNvb0IwbXYxVDFTYzdxVTVkcUZ2ZTJvOGJWSUU5QVM2VC1pQXZ1NHVFWmgxeWFMdC13N2F0eF9UOW9kbnpWclpONXBXd3JFQTZuWmJGbGhOYkJZSnhZTVdYcnRBMndGT0RaSXpRQjJ5SGRaTXdGV3VySWlicW92UlQ4UDNnSHVONTFoUERpUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">What leaders are saying about the renewed geopolitics of energy - The World Economic Forum</a>
-        <div class="modal-item-source">The World Economic Forum · Apr 02</div>
-      </div>
-      
+      <div id="items-geopolitics"></div>
     </div>
   </div>
-  
   <div class="modal" id="modal-technology">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <div class="modal-title">⚙️ Technology</div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxNREVUcTM3eG02Mk03WklUWHlKWmkxQ0hUYnRHSVRiM1ZqRHRiTDJSZ1RPaUdSd0lfZzFCc0p2eGhFLXVIRkhKSkdkcVVoTkx6QnVXVE9iUmpFRUtvWTRhQ0NBZmRPekotSkY5ZElnYnVPSmNLaGI1c2RpZ3pDSV9kRXJBUkFManpKVDdUNzhrZlZkUXVfUk9raFN1TXZTZlQ1d253TndOdzlpZw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">What is Mythos AI and why could it be a threat to global cybersecurity? - The Guardian</a>
-        <div class="modal-item-source">The Guardian · Apr 22</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNeU5DTk4yaXRVQ0JUaGRsUEs1MnhsZWxWam5qVmdLX3VYVFdqbnpOYmlvYU9DeEVQZnNfX0VnX3pUa1ZHOU5OY1NidVVpcHJScFpBSmRJZWdtM2xjNVBKdlk5YnpfN1pKaWhLcnlqVEQtTkF2U01vRnBTdmNtVmEyYms5RWtfcGVkelZZT2w3dm91T0NBX3dJc0hrOA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Why Marvell Technology (MRVL) Is Up 13.1% After Reported Google AI Chip Talks And What&#39;s Next - Yaho</a>
-        <div class="modal-item-source">Yahoo Finance · Apr 22</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxOc1VtUkYyWDM1bm5COTRWa1Q5UHltSEZ0eTV3cjc3TDJ0d2s3OVMxQkxIRkxJMS05S01kQWlURUJJVHR1dTFGXzB1V0JLZ2loQ0YxYWk1S0trdUNidEhCQWo3ZTRFZzVLWHJ6VFhhWjgyMU1HMEZ4d0VBblFjWVZRWENtdlV0MHc5Unp6YVpHbnDSAZYBQVVfeXFMT3VhYkVua2ZqNEJGSlJjSmZVS2tqUnl6OXJNRHE3ckx0Z1ZNcEtLMmNtbnB4Z2x4d2JWc3o1dk1uWEt6TFJHUFhTbWtBZ05xVTJNNDNUNVdXa01pR1ZQaEJPdi0zRWRBV0dxZGdkN0ZNOUo5UVdLQ0gwakxSZElYdFc5eTZqa1dRdHVnSF8tOVY2OXVLTWZ3?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Chinese tech workers are starting to train their AI doubles—and pushing back - MIT Technology Review</a>
-        <div class="modal-item-source">MIT Technology Review · Apr 20</div>
-      </div>
-      
+      <div id="items-technology"></div>
     </div>
   </div>
-  
   <div class="modal" id="modal-finance">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <div class="modal-title">💰 Finance</div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOMTdGTHVMcmVwNk4xb0FrbERlUHVSUFVaZUxzYVdTOHlBaVVHNENab29JYXJRNnBORGFQUE1rSzVpeEx6Wk4zMHFtSkJtcWFjVHV4RFk1MV9aZE1STFRSSUhiT1ZrZUpWYzNyYW9ZWFI0MDgxRkg4SFlkaVB5SmlEOG5FQ1BJUTFaUm5RTHdDMmJnRmdSN2hub2JaODNLRk5NbzhyVlo5aHc1TDBraC05RmxONmVONTd3T1A1ZUMzdUEtMGpzMzJ3OHBodWVPT196YnhUa3lR?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Earnings call transcript: BPI Q1 2026 misses forecasts amid economic challenges - Investing.com Cana</a>
-        <div class="modal-item-source">Investing.com Canada · Apr 22</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQbWpsUW5EZzdWbGJodlJ2YnJfMktwekdVd2NuNkZCcUU0WDhTMzFEODZUc3J1ZHNtalV6MkV2SzN2Yl9vSkdjUEpyeDJzbE5SXzM4cWQ5RWRTSEVhcXdWY3ZjSTZPcENuS0RCLTJrVzFGYV85TDI5QmFCZGNCc3NqOF81VnRCREVzWi1sOVdIMFBlMkhWQUREc3ZlX0Q0Y2U0bVdsM1gtaWhkTVZxS095cU01ZFc5OXhTLTZYaA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">OpenAI gets set to go public: can we entrust the financial markets with ChatGPT and AI? - The Conver</a>
-        <div class="modal-item-source">The Conversation · Apr 21</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxORnVwSEdKUE1XdXhzRlRWci10TTFjclBSdzdsR3pqYnhTa3VUZ1JsNll3NTZDZDZ1TEVydnp3MFFWdk00UEZuYzRPdG1PMXhsa2NJRTVNbGZtdkJFWkxRUm85NUMxS1RNLW00cnNfZVhKSTZxYkdYdEh4NlFDcTdnN1pzeGlCeG5QY2NidFlpcw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Financial Markets Morning Commentary - stonex.com</a>
-        <div class="modal-item-source">stonex.com · Apr 22</div>
-      </div>
-      
+      <div id="items-finance"></div>
     </div>
   </div>
-  
   <div class="modal" id="modal-local">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <div class="modal-title">📍 Local</div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNZy15MUpLR0t2SnBJRG5zbnFKQk9OM0xja0RfTnBxNm1sREV2cHNOMlRzdEluc1JTdzNOa25sbHBZSUUtcXpsQnZFeXRGeWdEVjdNVEo2bkZQdDRhdDRlaGhqUWVCSFo5emlwWU10LS1QY2FUYWZNajIxdkFKclFoWGFTazZtVGhiOEZhMFUybXhHRDZUcU1ZWjgxRzlwdw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Fraser Valley Highway 1 Corridor Improvement Program Traffic Notifications - B.C. government</a>
-        <div class="modal-item-source">B.C. government · Apr 17</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTDlLUTVtMkZOODMxV3F2NUhzU2RzcmRaRldBLURiRnhtVVlmeHNrR0paT1A4M2Z4M05RVzR6eFhLRnNQckVYbWZSWUQwbGw4NlN3c1V1dy1zUHFwakl5eUFRS0JrV0l3MEZnVmVlbmlCOVRDa09PbjRLdEdjTnlDX2ZkaDlBeGZ0Rk5uVWcwZ1c5bEEtR1c0YlhteUFkTDRFbnJQRWh1OEExdw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Crews tackle two collisions at Langley Bypass, 2 taken to hospital - Fraser Valley Today</a>
-        <div class="modal-item-source">Fraser Valley Today · Apr 18</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOQ2hzSWRLSF9TU01RX2Ytci1tSXZxUkZRbWJuX0FCR2tCLTNhcHhCWmhjdTBmOWpXbUZWanh0UDRJMlU3blJkT3hKaHI0Z2pZdmdzLXhhc1czYUpkTldCWHVldDAyN2RRaGVnY0ZuUWVhRFlnZE5DWE1qZXoxdzdQaUJtVUM5dUV3V25WVmNISzVjQUw2YnZxRUhNS3N3emw1SUpINnEyaWV5QXRhMGdfSHBUV1cweUxZRk11NzVB?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Rainfall to continue as Fraser Valley in ‘dynamic’ potential flooding situation - Langley Advance Ti</a>
-        <div class="modal-item-source">Langley Advance Times · Dec 10</div>
-      </div>
-      
+      <div id="items-local"></div>
     </div>
   </div>
-  
   <div class="modal" id="modal-jobs">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <div class="modal-title">💼 Jobs</div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNaFEtZWR3NS1ZTXl4Y1FBMUpYVjhmYUZVNlluV0VucVpUSjh1V2RLdlZpYUhhOFQ5aXlHaDJVRHJ2WW5ObXAta3I0ck5CVlhtMTlHMmZRRW9fQ1JyOVFrWFRveFlwYkowd2RKWlo3WWNyck8tb3gwd1RKZFA0anZZZjcyZi1KRkRQUjg5eUh6eXpUdzJUbXdqY1paUEZDWjQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Unemployed Ex-Microsoft Worker Struggles to Find Job, Pay Rent - Business Insider</a>
-        <div class="modal-item-source">Business Insider · Oct 12</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1fQ2J3VmU1ZmNCdUhRMld5YUU0VnBzQzdJSlVXM1IyTzZMVTBQVzJRdmVHQ1RLeDJvaWpRbzFNZWxwRm81WklGSWhWRDhQZVRBOTRfZUFROG82QQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Tech giant Oracle makes &#39;significant&#39; job cuts - BBC</a>
-        <div class="modal-item-source">BBC · Apr 01</div>
-      </div>
-      
-      <div class="modal-item">
-        <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxQZGR4QngzQ3FhUkR2OEFJT3k1cnVKd3JsUkFWbEc3cVAtOWhGc3dKMGQyOGQ1NVhCV0tMTU8zOUJVRWJiYkxDTHZOY0FNMVFsOGQ0bkoybDNHNEFJc2ZkUG1OMndJZFdKR2ZTMWJqQjhMbVZyTXVsbGdDS3VpTmJSZGdOam1jRVdDMmplTVVYajNzbTluNlBFckRxYw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">Oracle Layoffs Hit Sales, Engineering, Security: 5 Things To Know - crn.com</a>
-        <div class="modal-item-source">crn.com · Apr 01</div>
-      </div>
-      
+      <div id="items-jobs"></div>
     </div>
   </div>
-  
 </div>
 
 <script>
-  var GITHUB_TOKEN = "";
-  var GITHUB_REPO  = "ibalajisivarajan/daily-briefing";
+var GITHUB_TOKEN = '';
+var GITHUB_REPO  = 'ibalajisivarajan/daily-briefing';
+var CATEGORIES   = ['geopolitics', 'technology', 'finance', 'local', 'jobs'];
 
-  function openModal(cat) {
-    document.querySelectorAll('.modal').forEach(function(m) { m.classList.remove('active'); });
-    document.getElementById('modal-' + cat).classList.add('active');
+function setText(id, val) {
+  var el = document.getElementById(id);
+  if (el) { el.textContent = val; el.classList.remove('loading-pulse'); }
+}
+
+function renderNews(cat, items) {
+  var container = document.getElementById('items-' + cat);
+  if (!container) return;
+  if (!items || items.length === 0) {
+    container.innerHTML = '<div class="modal-item" style="opacity:0.5">No headlines available</div>';
+    return;
   }
-  function closeModal() {
-    document.querySelectorAll('.modal').forEach(function(m) { m.classList.remove('active'); });
+  container.innerHTML = items.map(function(item) {
+    return '<div class="modal-item">' +
+      '<a href="' + escHtml(item.url) + '" target="_blank" rel="noopener">' + escHtml(item.title) + '</a>' +
+      '<div class="modal-item-source">' + escHtml(item.source) + ' · ' + escHtml(item.date) + '</div>' +
+      '</div>';
+  }).join('');
+}
+
+function escHtml(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+async function loadData() {
+  try {
+    var resp = await fetch('/data.json?t=' + Date.now());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    var d = await resp.json();
+
+    if (d.background_image_url) {
+      document.getElementById('bg').style.backgroundImage = "url('" + d.background_image_url + "')";
+    }
+
+    setText('date',     d.date);
+    setText('time',     d.time);
+    setText('greeting', d.greeting);
+    setText('quote',    '“' + d.quote + '”');
+
+    var lw = d.weather && d.weather.langley;
+    var fw = d.weather && d.weather.ferndale;
+    if (lw) {
+      setText('langley-city',      lw.city || 'Langley, BC');
+      setText('langley-temp',      lw.icon + ' ' + lw.temp + '°');
+      setText('langley-condition', lw.condition);
+    }
+    if (fw) {
+      setText('ferndale-city',      fw.city || 'Ferndale, WA');
+      setText('ferndale-temp',      fw.icon + ' ' + fw.temp + '°');
+      setText('ferndale-condition', fw.condition);
+    }
+
+    if (d.news) {
+      CATEGORIES.forEach(function(cat) {
+        var items = d.news[cat] || [];
+        setText('count-' + cat, items.length);
+        renderNews(cat, items);
+      });
+    }
+
+    if (d.github_token) GITHUB_TOKEN = d.github_token;
+
+  } catch (err) {
+    console.error('Failed to load data.json:', err);
+    setText('time', '--:--');
+    setText('greeting', 'Could not load briefing data.');
   }
-  document.querySelectorAll('.modal').forEach(function(modal) {
-    modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
-  });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+}
 
-  async function refreshBriefing() {
-    var btn = document.getElementById('refreshBtn');
-    if (!GITHUB_TOKEN) { btn.textContent = '✗ No token'; return; }
+function openModal(cat) {
+  document.querySelectorAll('.modal').forEach(function(m) { m.classList.remove('active'); });
+  document.getElementById('modal-' + cat).classList.add('active');
+}
+function closeModal() {
+  document.querySelectorAll('.modal').forEach(function(m) { m.classList.remove('active'); });
+}
+document.querySelectorAll('.modal').forEach(function(modal) {
+  modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
-    btn.disabled = true;
-    btn.innerHTML = '<span class="spin">🔄</span> Refreshing...';
-
-    try {
-      var res = await fetch(
-        'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/generate.yml/dispatches',
-        {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/vnd.github+json',
-            'Authorization': 'token ' + GITHUB_TOKEN,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ ref: 'main' })
-        }
-      );
-
-      if (res.ok || res.status === 204) {
-        btn.innerHTML = '✓ Triggered!';
-        setTimeout(function() { btn.innerHTML = '⏳ Deploying (~30s)'; }, 2000);
-        setTimeout(function() { location.reload(); }, 35000);
-      } else {
-        btn.innerHTML = '✗ Failed (' + res.status + ')';
-        setTimeout(function() { btn.disabled = false; btn.innerHTML = '🔄 Refresh'; }, 3000);
+async function refreshBriefing() {
+  var btn = document.getElementById('refreshBtn');
+  if (!GITHUB_TOKEN) {
+    btn.textContent = '✗ No token';
+    setTimeout(function() { btn.textContent = '🔄 Refresh'; }, 2000);
+    return;
+  }
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin">🔄</span> Refreshing…';
+  try {
+    var res = await fetch(
+      'https://api.github.com/repos/' + GITHUB_REPO + '/actions/workflows/generate.yml/dispatches',
+      {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'token ' + GITHUB_TOKEN,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ref: 'main' })
       }
-    } catch (err) {
-      btn.innerHTML = '✗ Error';
+    );
+    if (res.ok || res.status === 204) {
+      btn.innerHTML = '✓ Triggered!';
+      setTimeout(function() { btn.innerHTML = '⏳ Deploying (~30s)'; }, 2000);
+      setTimeout(function() { loadData(); btn.disabled = false; btn.innerHTML = '🔄 Refresh'; }, 35000);
+    } else {
+      btn.innerHTML = '✗ Failed (' + res.status + ')';
       setTimeout(function() { btn.disabled = false; btn.innerHTML = '🔄 Refresh'; }, 3000);
     }
+  } catch (err) {
+    btn.innerHTML = '✗ Error';
+    setTimeout(function() { btn.disabled = false; btn.innerHTML = '🔄 Refresh'; }, 3000);
   }
-</script>
+}
 
+loadData();
+</script>
 </body>
 </html>
