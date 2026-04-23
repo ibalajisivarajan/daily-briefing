@@ -1,9 +1,9 @@
 {
   "date": "Wednesday, April 22, 2026",
-  "time": "21:31",
+  "time": "21:44",
   "greeting": "Good afternoon, Bala.",
-  "quote": "Every meeting without a decision is a meeting that should have been an email.",
-  "background_image_url": "https://images.unsplash.com/photo-1462651567147-aa679fd1cfaf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w5Mjc4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY5MTg3MDZ8&ixlib=rb-4.1.0&q=85",
+  "quote": "Decisions should be made at the lowest level of competence.",
+  "background_image_url": "https://images.unsplash.com/photo-1516687401797-25297ff1462c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w5Mjc4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY5MTk0ODR8&ixlib=rb-4.1.0&q=85",
   "weather": {
     "langley": {
       "city": "Langley, BC",
@@ -61,15 +61,9 @@
     ],
     "finance": [
       {
-        "title": "The Weekly Bottom Line - TD Economics",
-        "source": "TD Economics",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5iS3JheUxIbE9wdXkzWk1rUkxjT1p6VTJWeW1uMVpPY1hKYTMtNFF2Qzh1ck5JNTNKVGRSWXlBOWFta2xtZ2tVUTVhT0FlUmpqX1M2UngxLXRZZw?oc=5&hl=en-US&gl=US&ceid=US:en",
-        "date": "Apr 17"
-      },
-      {
-        "title": "New Zealand’s economic recovery delayed but not derailed, finance minister says By Reuters - Investi",
-        "source": "Investing.com",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOWVUtMDFzWEd3VkFvZHBHZFcwcG54ZDcybW9UVHB6YmVOR3A3Y29oRE0wZTdGb2I4a1dIT0Z3ald2YkZCcjQ2SGJBVGxTanhZVjV2MXRZZ2JKWW0xNGFWQXVKSkg5VG96SzdodkY3bTdvNTRiQ212RTRXbUNYdG5hLUhBdUJKbDJVckFtRmRySlg4TnJwbDhCTVBtZE9CZnc4elhacXhDMFlNZlZFTEpsZGxrZUZvNG1obXVWb2lTNWdETEo3dFp3SnJmbDNyZ0U?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "Morning Bid: How much risk can markets swallow? By Reuters - Investing.com Canada",
+        "source": "Investing.com Canada",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVWpOcm9Ob244WThFUmNDZzBYTmlEa2hEMThPMzN6aktSdHQ2OVNPdTI5MmU0REtzVHNWM3REYVRhTHR6N1dKNEhtTXR2cUN4d0FnOVNQU3dsX3BMWTB2WGlhc3VuWUVYTGVyT1ZBU252dHo3NzE2OFhSRTdhNWNOa1hKMXhVU0xDT2Q3dEFkZ1J5elhONXVHMUVBaUY?oc=5&hl=en-US&gl=US&ceid=US:en",
         "date": "Apr 23"
       },
       {
@@ -77,6 +71,12 @@
         "source": "U.S. Bank",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUVliSlNNN1JvaWszYmh4VVhGc3FBczJyOTYtbkVYdmJuc3JoUjROWGdEcjdfdnBybXlteWc1bFRCeEZDTHRxN0xHUnU4Wkg1THdnV3BWUHRKYVhVbGF4QnlwTzZjYU81SkQ2U3VXSElCNXpHQzF4bjFQTXotc3FvSnc4TGxKNlROU3c2SE1PTHM4cmNjanN6X04ydV9kZU5UQ3p1LQ?oc=5&hl=en-US&gl=US&ceid=US:en",
         "date": "Apr 16"
+      },
+      {
+        "title": "OpenAI gets set to go public: can we entrust the financial markets with ChatGPT and AI? - The Conver",
+        "source": "The Conversation",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbWpsUW5EZzdWbGJodlJ2YnJfMktwekdVd2NuNkZCcUU0WDhTMzFEODZUc3J1ZHNtalV6MkV2SzN2Yl9vSkdjUEpyeDJzbE5SXzM4cWQ5RWRTSEVhcXdWY3ZjSTZPcENuS0RCLTJrVzFGYV85TDI5QmFCZGNCc3NqOF81VnRCREVzWi1sOVdIMFBlMkhWQUREc3ZlX0Q0Y2U0bVdsM1gtaWhkTVZxS095cU01ZFc5OXhTLTZYaA?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "date": "Apr 21"
       }
     ],
     "local": [
@@ -87,8 +87,8 @@
         "date": "Apr 18"
       },
       {
-        "title": "Fraser Valley Highway 1 Corridor Improvement Program Traffic Notifications - B.C. government",
-        "source": "B.C. government",
+        "title": "Fraser Valley Highway 1 Corridor Improvement Program Traffic Notifications - BC government",
+        "source": "BC government",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZy15MUpLR0t2SnBJRG5zbnFKQk9OM0xja0RfTnBxNm1sREV2cHNOMlRzdEluc1JTdzNOa25sbHBZSUUtcXpsQnZFeXRGeWdEVjdNVEo2bkZQdDRhdDRlaGhqUWVCSFo5emlwWU10LS1QY2FUYWZNajIxdkFKclFoWGFTazZtVGhiOEZhMFUybXhHRDZUcU1ZWjgxRzlwdw?oc=5&hl=en-US&gl=US&ceid=US:en",
         "date": "Apr 17"
       },
@@ -113,9 +113,9 @@
         "date": "Apr 01"
       },
       {
-        "title": "Oracle employee’s calm layoff reaction goes viral amid 30,000 job cuts: ‘Its Oracle’s loss’ - The In",
-        "source": "The Indian Express",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWkl1cXVZeWFTemM1WWRsUXBEc0lZLTVqV3E1VnZhNklhWDN0QWcxSGwtSWg0dW5BVVhzalY4ckV2dnh0QnJYZWktZl9BT1J4YWRXQjZaR0xrNU9zdlJ6OVJnQmdDMkZsb1VhaWZWZVp2Z1pNZm1fNHFvSHFHNnktUy1jUGJfSGZYQVZBbHlmZmFlUDBmNDdBX1NjWEc1TGdjN2NNYnFpbVoyR0FkNmhPelNmbnpNZm1MbzNCRjFFVnLSAccBQVVfeXFMTUtrS20wYWE4SVN0ZmdudUVTM3pHVi1jTXlVaGIwYUN4RTBSVE1neGVUeWxobnFmVHVIWjNla09aWEllMktEWU9wSkhYa3BIbmZqcHJUbF9Cc0FhYjRGYWxGWDhaZGpNbDZGalpGV1ZkSU9BWE5lOEg5bnpCVVBlb1BmMnpQWnJFRkpsck1CMFlNMzdWZXJIWlhNM2hlbHdXa1lxa0Z5MlZzYm1GWE96ek9QZnVyYjhzS2N0NGY3dGtDRkp4NFZmWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "US tech firm Oracle cuts thousands of jobs as it steps up AI spending - The Guardian",
+        "source": "The Guardian",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPM183bW81ZXRRclBnYmFfLXpjVGtGT1g5RWZDMFBzdUJmbUljSXJkVGVtYUtjeW9HRHVVVWtqZUt4MEVUUWdORVk1ZkNjREpXVUxUaGpRUnQwNzEwRmhWc3lVTDZBVW9uY1hVdnZGZUYyT3UzMy1lS0E0bVdaeTdSMlNlWFpKNWpGZ3pYZ1IxcWR3eEFaWXo4akhCQXExZU1QajVmMUJoRmYybVJNSFl6WGVQblJ2WVlhRGY3MVVoM0h2eU1NZGJTdHBzWTBGUUU?oc=5&hl=en-US&gl=US&ceid=US:en",
         "date": "Apr 02"
       }
     ]
@@ -129,13 +129,13 @@
         "updated": ""
       },
       {
-        "type": "Incident",
-        "location": "Highway 9, in both directions. Vehicle incident at Agassiz-R",
+        "type": "Construction",
+        "location": "Highway 1 (TransCanada Highway), eastbound. Road sweeping be",
         "updated": ""
       },
       {
-        "type": "Construction",
-        "location": "Highway 1 (TransCanada Highway), eastbound. Road sweeping be",
+        "type": "Incident",
+        "location": "Highway 9, in both directions. Vehicle incident at Agassiz-R",
         "updated": ""
       },
       {
@@ -152,5 +152,5 @@
     "google_maps_url": "https://www.google.com/maps/dir/Langley,+BC/Ferndale,+WA/@49.0,+-122.6,10z"
   },
   "github_token": "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",
-  "generated_at": "2026-04-22 21:31 PDT"
+  "generated_at": "2026-04-22 21:44 PDT"
 }
