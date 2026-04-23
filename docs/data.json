@@ -1,9 +1,9 @@
 {
   "date": "Wednesday, April 22, 2026",
-  "time": "21:29",
+  "time": "21:31",
   "greeting": "Good afternoon, Bala.",
-  "quote": "If you can't explain the timeline, you don't understand the project.",
-  "background_image_url": "https://images.unsplash.com/photo-1462651567147-aa679fd1cfaf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w5Mjc4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY5MTg1NzB8&ixlib=rb-4.1.0&q=85",
+  "quote": "Every meeting without a decision is a meeting that should have been an email.",
+  "background_image_url": "https://images.unsplash.com/photo-1462651567147-aa679fd1cfaf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w5Mjc4NTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY5MTg3MDZ8&ixlib=rb-4.1.0&q=85",
   "weather": {
     "langley": {
       "city": "Langley, BC",
@@ -87,8 +87,8 @@
         "date": "Apr 18"
       },
       {
-        "title": "Fraser Valley Highway 1 Corridor Improvement Program Traffic Notifications - BC government",
-        "source": "BC government",
+        "title": "Fraser Valley Highway 1 Corridor Improvement Program Traffic Notifications - B.C. government",
+        "source": "B.C. government",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZy15MUpLR0t2SnBJRG5zbnFKQk9OM0xja0RfTnBxNm1sREV2cHNOMlRzdEluc1JTdzNOa25sbHBZSUUtcXpsQnZFeXRGeWdEVjdNVEo2bkZQdDRhdDRlaGhqUWVCSFo5emlwWU10LS1QY2FUYWZNajIxdkFKclFoWGFTazZtVGhiOEZhMFUybXhHRDZUcU1ZWjgxRzlwdw?oc=5&hl=en-US&gl=US&ceid=US:en",
         "date": "Apr 17"
       },
@@ -113,9 +113,9 @@
         "date": "Apr 01"
       },
       {
-        "title": "US tech firm Oracle cuts thousands of jobs as it steps up AI spending - The Guardian",
-        "source": "The Guardian",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPM183bW81ZXRRclBnYmFfLXpjVGtGT1g5RWZDMFBzdUJmbUljSXJkVGVtYUtjeW9HRHVVVWtqZUt4MEVUUWdORVk1ZkNjREpXVUxUaGpRUnQwNzEwRmhWc3lVTDZBVW9uY1hVdnZGZUYyT3UzMy1lS0E0bVdaeTdSMlNlWFpKNWpGZ3pYZ1IxcWR3eEFaWXo4akhCQXExZU1QajVmMUJoRmYybVJNSFl6WGVQblJ2WVlhRGY3MVVoM0h2eU1NZGJTdHBzWTBGUUU?oc=5&hl=en-US&gl=US&ceid=US:en",
+        "title": "Oracle employee’s calm layoff reaction goes viral amid 30,000 job cuts: ‘Its Oracle’s loss’ - The In",
+        "source": "The Indian Express",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWkl1cXVZeWFTemM1WWRsUXBEc0lZLTVqV3E1VnZhNklhWDN0QWcxSGwtSWg0dW5BVVhzalY4ckV2dnh0QnJYZWktZl9BT1J4YWRXQjZaR0xrNU9zdlJ6OVJnQmdDMkZsb1VhaWZWZVp2Z1pNZm1fNHFvSHFHNnktUy1jUGJfSGZYQVZBbHlmZmFlUDBmNDdBX1NjWEc1TGdjN2NNYnFpbVoyR0FkNmhPelNmbnpNZm1MbzNCRjFFVnLSAccBQVVfeXFMTUtrS20wYWE4SVN0ZmdudUVTM3pHVi1jTXlVaGIwYUN4RTBSVE1neGVUeWxobnFmVHVIWjNla09aWEllMktEWU9wSkhYa3BIbmZqcHJUbF9Cc0FhYjRGYWxGWDhaZGpNbDZGalpGV1ZkSU9BWE5lOEg5bnpCVVBlb1BmMnpQWnJFRkpsck1CMFlNMzdWZXJIWlhNM2hlbHdXa1lxa0Z5MlZzYm1GWE96ek9QZnVyYjhzS2N0NGY3dGtDRkp4NFZmWQ?oc=5&hl=en-US&gl=US&ceid=US:en",
         "date": "Apr 02"
       }
     ]
@@ -152,5 +152,5 @@
     "google_maps_url": "https://www.google.com/maps/dir/Langley,+BC/Ferndale,+WA/@49.0,+-122.6,10z"
   },
   "github_token": "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",
-  "generated_at": "2026-04-22 21:29 PDT"
+  "generated_at": "2026-04-22 21:31 PDT"
 }
