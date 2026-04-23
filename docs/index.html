@@ -265,7 +265,7 @@ function escHtml(s) {
 
 async function loadData() {
   try {
-    var resp = await fetch('/data.json?t=' + Date.now());
+    var resp = await fetch('https://raw.githubusercontent.com/ibalajisivarajan/daily-briefing/main/data.json?t=' + Date.now());
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     var d = await resp.json();
 

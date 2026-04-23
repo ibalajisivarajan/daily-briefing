@@ -206,8 +206,7 @@ def main():
     log.info("generate_briefing: starting")
     data = build_data()
 
-    out_path = Path(__file__).parent.parent / "docs" / "data.json"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path = Path(__file__).parent.parent / "data.json"
     out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
     log.info("render: complete (%d bytes) → %s", out_path.stat().st_size, out_path)

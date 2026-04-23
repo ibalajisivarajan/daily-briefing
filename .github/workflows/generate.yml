@@ -32,7 +32,7 @@ jobs:
         run: |
           git config user.name "Daily Briefing Bot"
           git config user.email "bot@github.local"
-          git add docs/data.json
+          git add data.json
           git commit -m "chore: refresh briefing data" --allow-empty
           git pull --rebase origin main
           git push
